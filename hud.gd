@@ -14,3 +14,9 @@ func change_score():
 func show_gameover():
 	get_tree().paused = true
 	$"./Gameover".visible = true
+	$"./ResetButton".visible = true
+
+
+func _on_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
