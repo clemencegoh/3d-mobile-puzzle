@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5j5y434g6wco"]
+[gd_scene load_steps=9 format=3 uid="uid://c5j5y434g6wco"]
 
 [ext_resource type="PackedScene" uid="uid://datv27i46t6re" path="res://spawner.tscn" id="1_45qb4"]
+[ext_resource type="Script" path="res://block_holder.gd" id="1_bwm0s"]
 [ext_resource type="Script" path="res://perspective_sphere.gd" id="1_dxqek"]
-[ext_resource type="Script" path="res://world_manager.gd" id="1_itaxd"]
 [ext_resource type="Script" path="res://kill_area.gd" id="3_v03ds"]
-[ext_resource type="PackedScene" uid="uid://bpn651twi3mxy" path="res://hud.tscn" id="4_m33ot"]
 
 [sub_resource type="Environment" id="Environment_2yjg2"]
 background_mode = 1
@@ -23,7 +22,6 @@ size = Vector3(16, 0.2, 16)
 size = Vector3(125.126, 1, 170.569)
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_itaxd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2yjg2")
@@ -46,6 +44,7 @@ shape = SubResource("BoxShape3D_imtox")
 [node name="BlockHolder" type="Node3D" parent="." groups=["block_group"]]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
+script = ExtResource("1_bwm0s")
 
 [node name="PerspectiveSphere" type="Node3D" parent="."]
 script = ExtResource("1_dxqek")
@@ -56,8 +55,6 @@ frustum_offset = Vector2(12, 12)
 
 [node name="Spawner" parent="PerspectiveSphere" instance=ExtResource("1_45qb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
-
-[node name="HUD" parent="PerspectiveSphere" instance=ExtResource("4_m33ot")]
 
 [node name="KillArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
