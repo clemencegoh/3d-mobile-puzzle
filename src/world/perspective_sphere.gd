@@ -2,7 +2,7 @@ extends Node3D
 
 var swipe_start = null
 var minimum_drag = 100
-var ROTATION_SPEED = 5
+var ROTATION_SPEED = 10
 var current_angle = 0
 
 func _physics_process(delta: float) -> void:
@@ -11,9 +11,7 @@ func _physics_process(delta: float) -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("press"):
-		#if event.pressed:
 		swipe_start = event.get_position()
-		#else:
 	if event.is_action_released("press"):
 		_calculate_swipe(event.get_position())
 
