@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://datv27i46t6re"]
+
+[ext_resource type="Script" path="res://src/blocks/spawner.gd" id="1_13dws"]
+[ext_resource type="PackedScene" uid="uid://dglx1x1a1idk6" path="res://src/blocks/single_box.tscn" id="2_dkty4"]
+
+[node name="Spawner" type="Node3D" groups=["block_spawn"]]
+script = ExtResource("1_13dws")
+block = ExtResource("2_dkty4")

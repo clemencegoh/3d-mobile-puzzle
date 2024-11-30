@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpn651twi3mxy"]
+[gd_scene load_steps=5 format=3 uid="uid://bpn651twi3mxy"]
 
-[ext_resource type="Script" path="res://hud.gd" id="1_1bxld"]
+[ext_resource type="Script" path="res://src/world/hud.gd" id="1_1bxld"]
+[ext_resource type="AudioStream" uid="uid://dkh6t08066ccy" path="res://src/sounds/gameover.mp3" id="2_01t8m"]
+[ext_resource type="AudioStream" uid="uid://cvcac1mhohjpq" path="res://src/sounds/bell-1.mp3" id="3_12ebr"]
+[ext_resource type="AudioStream" uid="uid://dfhbqig1tdj22" path="res://src/sounds/game-light-bgm.mp3" id="4_1txar"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("gameoverSound", "blocksFreeSound")]
 script = ExtResource("1_1bxld")
+gameoverSound = NodePath("GameoverSound")
+blocksFreeSound = NodePath("BlocksFreeSound")
 
 [node name="Container" type="HBoxContainer" parent="."]
 offset_left = 29.0
@@ -52,5 +57,22 @@ offset_top = 53.0
 offset_right = 133.0
 offset_bottom = 84.0
 text = "Restart"
+
+[node name="GameoverSound" type="AudioStreamPlayer3D" parent="."]
+process_mode = 3
+stream = ExtResource("2_01t8m")
+volume_db = 10.0
+max_db = 6.0
+
+[node name="BlocksFreeSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_12ebr")
+volume_db = 10.0
+max_db = 6.0
+
+[node name="BGM" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_1txar")
+volume_db = 5.0
+max_db = 6.0
+autoplay = true
 
 [connection signal="pressed" from="ResetButton" to="." method="_on_button_pressed"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://c5j5y434g6wco"]
 
-[ext_resource type="PackedScene" uid="uid://datv27i46t6re" path="res://spawner.tscn" id="1_45qb4"]
-[ext_resource type="Script" path="res://perspective_sphere.gd" id="1_dxqek"]
-[ext_resource type="Script" path="res://world_manager.gd" id="1_itaxd"]
-[ext_resource type="Script" path="res://kill_area.gd" id="3_v03ds"]
-[ext_resource type="PackedScene" uid="uid://bpn651twi3mxy" path="res://hud.tscn" id="4_m33ot"]
+[ext_resource type="PackedScene" uid="uid://datv27i46t6re" path="res://src/blocks/spawner.tscn" id="1_45qb4"]
+[ext_resource type="Script" path="res://src/world/perspective_sphere.gd" id="1_dxqek"]
+[ext_resource type="Script" path="res://src/world/world_manager.gd" id="1_itaxd"]
+[ext_resource type="Script" path="res://src/world/kill_area.gd" id="3_v03ds"]
+[ext_resource type="PackedScene" uid="uid://bpn651twi3mxy" path="res://src/world/hud.tscn" id="4_m33ot"]
 
 [sub_resource type="Environment" id="Environment_2yjg2"]
 background_mode = 1

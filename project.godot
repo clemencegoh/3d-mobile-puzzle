@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="3d-mobile-tower-builder"
-run/main_scene="res://world.tscn"
+run/main_scene="res://src/world/world.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://game_manager.gd"
+GameManager="*res://src/world/game_manager.gd"
 
 [global_group]
 

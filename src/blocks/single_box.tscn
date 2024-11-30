@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dglx1x1a1idk6"]
 
-[ext_resource type="Script" path="res://block.gd" id="1_3v6lw"]
+[ext_resource type="Script" path="res://src/blocks/block.gd" id="1_3v6lw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_htva2"]
 absorbent = true
@@ -11,6 +11,7 @@ radius = 5.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62b0u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kvb8b"]
+lightmap_size_hint = Vector2i(80, 119)
 material = SubResource("StandardMaterial3D_62b0u")
 size = Vector3(7.6, 7.6, 7.6)
 
