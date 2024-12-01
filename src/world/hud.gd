@@ -11,12 +11,16 @@ func _ready() -> void:
 	GameManager.connect("change_score", self.change_score)
 	GameManager.connect("gameover", self.show_gameover)
 	
-func change_score():
-	actualScoreLabel.text = str(GameManager.current_score)
-	blocksFreeSound.play()
+func change_score(reset: bool):
+	if reset:
+		actualScoreLabel.text = "0"
+	else:
+		actualScoreLabel.text = str(GameManager.current_score)
+		blocksFreeSound.play()
 
 func show_gameover():
 	gameoverSound.play()
+	GameManager.emit_signal("change_score", true)
 	get_tree().paused = true
 	$"./Gameover".visible = true
 	$"./ResetButton".visible = true

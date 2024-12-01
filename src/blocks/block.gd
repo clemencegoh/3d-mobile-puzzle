@@ -13,7 +13,7 @@ func _ready() -> void:
 func i_cant_take_this_no_mo(color: String):
 	if (color == block_color and self.touching_n_other_blocks > 1):
 		self.queue_free()
-		GameManager.emit_signal("change_score")
+		GameManager.emit_signal("change_score", false)
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
